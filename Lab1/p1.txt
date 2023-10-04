@@ -1,0 +1,30 @@
+:: compute the min/max of 3 numbers
+
+deffun get_min(int a, int b, int c)[
+	if a <= b and a <= c:
+		send_back a
+	else_if b <= a and b <= c:
+		send_back b
+	else:
+		send_back c
+]
+
+
+deffun get_max(int a, int b, int c)[
+	if a >= b and a >= c:
+		send_back a
+	else_if b >= a and b >= c:
+		send_back b
+	else:
+		send_back c
+]
+
+
+deffun main[
+	int a, b, c
+	read :: a :: b :: c
+	int min = call_func(get_min(a, b, c))
+	write :: min
+	int max = call_func(get_max(a, b, c))
+	write :: max
+]

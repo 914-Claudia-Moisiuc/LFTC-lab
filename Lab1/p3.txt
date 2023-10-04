@@ -1,0 +1,44 @@
+:: calculate the sum of n numbers
+
+deffun cal_sum(list vector)[
+	int sum = 0
+	for i in vector:
+		sum = sum + i
+	send_back sum
+]
+
+
+:: max/min of n numbers
+
+deffun get_max_n(list vector)[
+	int max = vector(0)
+	for i in vector:
+		if i > max:
+			max = i
+	send_back max
+
+]
+
+
+deffun get_min_n(list vector)[
+	int min = vector(0)
+	for i in vector:
+		if i < min:
+			min = i
+	send_back min
+
+]
+
+
+deffun main[
+	int n
+	read :: n
+	list vector(n)
+	for i in interval (0, n-1):
+		read :: vector(i)
+
+	write :: call_func(cal_sum(vector))
+	write :: call_func(get_max_n(vector))
+	write :: call_func(get_min_n(vector))
+
+]
