@@ -1,0 +1,194 @@
+Lexic :
+
+
+Alphabet:
+	a. lower case letters (a-z) of the English alphabet
+	b. underline character '_'
+	c. decimal digits (0-9)
+
+1. Lexic
+	a.Special symbols, representing:
+		- operators  + - * / == < <= != >= > % 
+		- separators [] () :: : space
+		- reserved words: 
+			- list 
+			- int
+			- read
+			- write
+			- call_func
+			- if
+			- for
+			- send_back
+			- break
+			- duffun
+			- float
+			- True
+			- False
+			- char
+	b. identifiers: a sequence of letters, digits and under scores, such that the first character is a letter; the rule is:
+			identifier ::= letter | letter{letter}{digit}
+    			letter ::= "a" | "b" | . ..| "z"
+    			digit ::= "0" | "1" |...| "9"
+	c. constants: 
+		1. integer - rule:
+			nbconst:="+"nb|"-"nb|nb
+		2. character
+    			character:='letter'|'digit'
+		3. string
+			constchar:="string"
+      			string:=char{string}
+      			char:=letter|digit
+		4. float - rule:
+			nbconst:="+"nbf|"-"nbf|nbf
+
+
+Token :
+
+
++
+-
+/
+*
+==
+<
+>
+<=
+>=
+%
+!=
+[]
+()
+::
+:::
+:
+space
+list
+int
+read
+write
+call_func
+if
+for
+break
+send_back
+duffun
+float
+True
+False
+char
+q
+w
+e
+r
+t
+y
+u
+i
+o
+p
+a
+s
+d
+f
+g
+h
+j
+k
+l
+z
+x
+c
+v
+b
+n
+m
+Q
+W
+E
+R
+T
+Y
+U
+I
+O
+P
+A
+S
+D
+F
+G
+H
+J
+K
+L
+Z
+X
+C
+V
+B
+N
+M
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+
+
+
+Syntax
+
+
+program := function | function_call 
+
+funtion_call := "call_func" '(' function_name ['(' list_identifiers ')'] ')'
+
+list_identifiers := identifier | identifier ',' list_identifiers
+
+function := "deffun" function_name ["(" list_var ")"] "[" stmt "]"
+
+list_var := type identifier | type identifier "," list_var
+
+type := 'char' | 'integer' | 'list' | 'float' | 'boolean'
+
+decl_list := declaration | declaration "," decl_list
+
+declaration := type identifier | type identifier "=" identifier | type identifier "=" const
+
+array_decl := "list" identifier "(" nr ")"
+
+io_stmt := "READ" | "WRITE" "::" IDENTIFIER 
+
+if_stmt := "if" list_conditions ":" stmt ['else_if' list_conditions ':']['else' ':' stmt]
+
+list_conditions := condition | condition logical_operators list_conditions
+
+condition := expression relation expression
+
+expression ::= expression "+" term | term
+
+term ::= term "*" factor | factor
+
+factor ::= "(" expression ")" | IDENTIFIER
+
+RELATION ::= "<" | "<=" | "==" | "!=" | ">=" | ">" | "and"
+
+logical_operators := 'and'| 'or'| 'not'
+
+stmt ::= simplstmt | structstmt
+
+simplstmt ::= assignstmt | iostmt
+
+assignstmt ::= IDENTIFIER "=" expression
+
+structstmt ::= cmpdstmt | ifstmt | whilestmt | forstmt
+
+whilestmt ::= "WHILE" list_conditions ":" stmt
+
+forstmt ::= "FOR" identifier "in interval" "(" identifier "," identifier ["," identifier] ":" stmt | "FOR" identifier "in" identifier ":"
+

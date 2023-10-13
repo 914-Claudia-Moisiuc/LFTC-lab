@@ -1,0 +1,48 @@
+program := function | function_call 
+
+funtion_call := "call_func" '(' function_name ['(' list_identifiers ')'] ')'
+
+list_identifiers := identifier | identifier ',' list_identifiers
+
+function := "deffun" function_name ["(" list_var ")"] "[" stmt "]"
+
+list_var := type identifier | type identifier "," list_var
+
+type := 'char' | 'integer' | 'list' | 'float' | 'boolean'
+
+decl_list := declaration | declaration "," decl_list
+
+declaration := type identifier | type identifier "=" identifier | type identifier "=" const
+
+array_decl := "list" identifier "(" nr ")"
+
+io_stmt := "READ" | "WRITE" "::" IDENTIFIER 
+
+if_stmt := "if" list_conditions ":" stmt ['else_if' list_conditions ':']['else' ':' stmt]
+
+list_conditions := condition | condition logical_operators list_conditions
+
+condition := expression relation expression
+
+expression ::= expression "+" term | term
+
+term ::= term "*" factor | factor
+
+factor ::= "(" expression ")" | IDENTIFIER
+
+RELATION ::= "<" | "<=" | "==" | "!=" | ">=" | ">" | "and"
+
+logical_operators := 'and'| 'or'| 'not'
+
+stmt ::= simplstmt | structstmt
+
+simplstmt ::= assignstmt | iostmt
+
+assignstmt ::= IDENTIFIER "=" expression
+
+structstmt ::= cmpdstmt | ifstmt | whilestmt | forstmt
+
+whilestmt ::= "WHILE" list_conditions ":" stmt
+
+forstmt ::= "FOR" identifier "in interval" "(" identifier "," identifier ["," identifier] ":" stmt | "FOR" identifier "in" identifier ":"
+

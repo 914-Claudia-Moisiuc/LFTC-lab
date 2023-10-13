@@ -1,0 +1,39 @@
+Alphabet:
+	a. lower case letters (a-z) of the English alphabet
+	b. underline character '_'
+	c. decimal digits (0-9)
+
+1. Lexic
+	a.Special symbols, representing:
+		- operators  + - * / == < <= != >= > % 
+		- separators [] () :: : space
+		- reserved words: 
+			- list 
+			- int
+			- read
+			- write
+			- call_func
+			- if
+			- for
+			- send_back
+			- break
+			- duffun
+			- float
+			- True
+			- False
+			- char
+	b. identifiers: a sequence of letters, digits and under scores, such that the first character is a letter; the rule is:
+			identifier ::= letter | letter{letter}{digit}
+    			letter ::= "a" | "b" | . ..| "z"
+    			digit ::= "0" | "1" |...| "9"
+	c. constants: 
+		1. integer - rule:
+			nbconst:="+"nb|"-"nb|nb
+		2. character
+    			character:='letter'|'digit'
+		3. string
+			constchar:="string"
+      			string:=char{string}
+      			char:=letter|digit
+		4. float - rule:
+			nbconst:="+"nbf|"-"nbf|nbf
