@@ -1,0 +1,4 @@
+- the list of reserved words from lexic.txt is not complete (ex. there is no word reserved for the printing operation)
+- at while_statement, statement should not be optional
+- it is not presented how a function is declared
+- in the function_call_statement and the function_name it is presented how to print and read, and nothing related to functions, how to call and how to create them
