@@ -91,3 +91,5 @@ M
 8
 9
 0
+
+//whitout the single letters and digits
