@@ -1,12 +1,12 @@
 program := function | function_call 
 
-funtion_call := "call_func" '(' function_name ['(' list_identifiers ')'] ')'
+funtion_call := "call_func" '(' function_name ['(' list_identifiers ')'] ')'  //function_name is not defined
 
 list_identifiers := identifier | identifier ',' list_identifiers
 
 function := "deffun" function_name ["(" list_var ")"] "[" stmt "]"
 
-list_var := type identifier | type identifier "," list_var
+list_var := type identifier | type identifier "," list_var  // list_var_decl = type list_var \n list_var = identifier | identifier "," list_var => it looks like you need to write type after every idenitfier
 
 type := 'char' | 'integer' | 'list' | 'float' | 'boolean'
 
@@ -24,13 +24,13 @@ list_conditions := condition | condition logical_operators list_conditions
 
 condition := expression relation expression
 
-expression ::= expression "+" term | term
+expression ::= expression "+" term | term 
 
 term ::= term "*" factor | factor
 
 factor ::= "(" expression ")" | IDENTIFIER
 
-RELATION ::= "<" | "<=" | "==" | "!=" | ">=" | ">" | "and"
+RELATION ::= "<" | "<=" | "==" | "!=" | ">=" | ">" | "and"   // and is not a relational operator
 
 logical_operators := 'and'| 'or'| 'not'
 
@@ -40,7 +40,7 @@ simplstmt ::= assignstmt | iostmt
 
 assignstmt ::= IDENTIFIER "=" expression
 
-structstmt ::= cmpdstmt | ifstmt | whilestmt | forstmt
+structstmt ::= cmpdstmt | ifstmt | whilestmt | forstmt // a syntax for multiple statements is not defind
 
 whilestmt ::= "WHILE" list_conditions ":" stmt
 

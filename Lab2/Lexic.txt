@@ -23,17 +23,17 @@ Alphabet:
 			- False
 			- char
 	b. identifiers: a sequence of letters, digits and under scores, such that the first character is a letter; the rule is:
-			identifier ::= letter | letter{letter}{digit}
+			identifier ::= letter | letter{letter}{digit} //{letter|digit}
     			letter ::= "a" | "b" | . ..| "z"
     			digit ::= "0" | "1" |...| "9"
 	c. constants: 
 		1. integer - rule:
 			nbconst:="+"nb|"-"nb|nb
 		2. character
-    			character:='letter'|'digit'
+    			character:='letter'|'digit' // whitout ''
 		3. string
 			constchar:="string"
-      			string:=char{string}
+      			string:=char{string} 
       			char:=letter|digit
 		4. float - rule:
 			nbconst:="+"nbf|"-"nbf|nbf
