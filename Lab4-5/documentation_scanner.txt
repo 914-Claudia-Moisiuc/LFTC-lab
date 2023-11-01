@@ -1,0 +1,22 @@
+
+set_program(program) - assignes the program
+
+read_tokens() - the function selects the reserved words, reading them from the file "reserved.txt". it will also read the tokens and store them in the token section. the tokens are read from the file "token.txt" and are the data that are not reserved_words.
+
+skip_space() - the function skips the spaces and the endlines present on the scanned line
+
+skip_comments() - the function skips the comments present on the scanned program
+
+treat_string_constant() - using a regex, the function compares the possible string to the predefined formation of a string. if the string is a valid one it will be added to the single table
+
+treat_int_constant() - using a regex, the function compares the possible integer to the predefined formation of an integer. if the integer is a valid one it will be added to the single table
+
+check_if_valid() - the function checks if the identifier is valid
+
+treat_identifier() - using a regex, the function compares the possible identifier to the predefined formation of an identifier. if the identifier is a valid one it will be added to the single table
+
+treat_from_token_list() - the function searches if the sequence i am on is a token or a reserved word
+
+next_token() - the function sees if the sequence is an identifier, a string, an int or a token
+
+scan() - scans the program
