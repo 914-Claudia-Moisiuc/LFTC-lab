@@ -1,0 +1,36 @@
+The class FA 
+
+- init(self): Initializes the FA by reading the definition from the specified file.
+- print_list_of_strings(self, list_name, _list): Helper method to print a list of strings.
+- print_states(self): Prints the list of states.
+- print_alphabet(self): Prints the list of symbols in the alphabet.
+- print_output_states(self): Prints the list of output states.
+- print_initial_state(self): Prints the initial state.
+- print_transitions(self): Prints the list of transitions.
+- check_accepted(self, word): Checks if a given word is accepted by the FA.
+- check_if_deterministic(self): Checks if the FA is deterministic.
+
+class Transition 
+
+- get_from(self): Returns the source state.
+- get_to(self): Returns the destination state.
+- get_label(self): Returns the transition label.
+- set_from(self, new_from): Sets a new value for the source state.
+- set_to(self, new_to): Sets a new value for the destination state.
+- set_label(self, new_label): Sets a new value for the transition label.
+
+
+FA        ::= states initial_state out_states alphabet transitions
+
+states    ::= "{" state ("," state)* "}"
+state     ::= "q" | "r" | "p"
+
+initial_state ::= "initial_state=" state
+
+out_states ::= "{" state ("," state)* "}"
+
+alphabet  ::= "{" symbol ("," symbol)* "}"
+symbol    ::= "0" | "1"
+
+transitions ::= "{" transition ("," transition)* "}"
+transition ::= "(" state "," state "," symbol ")" (";" transition)*
