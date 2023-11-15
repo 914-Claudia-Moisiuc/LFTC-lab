@@ -1,5 +1,0 @@
-SymbolTable{
-identifiersHashTable=HashTable{items=[[], ['sum', 'min'], [], ['i', 'max'], [], [], [], [], ['n'], ['cal_sum', 'get_min_n'], [], ['get_max_n'], [], ['vector'], [], [], []]}
-intConstantsHashTable=HashTable{items=[[0], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [-1]]}
-stringConstantsHashTable=HashTable{items=[[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []]}
-}
