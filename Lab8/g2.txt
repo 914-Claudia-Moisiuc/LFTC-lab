@@ -1,0 +1,4 @@
+N = program funtion_call list_identifiers function list_var type decl_list declaration array_decl io_stmt if_stmt list_conditions condition expression term factor RELATION logical_operators stmt simplstmt assignstmt structstmt whilestmt forstmt logical_operators
+
+sigma = call_func identifier ( ) [ ] , char integer list float boolean = const nr read write :: if : else_if else + - / * % < <= == != >= > and or not = while for interval in 
+
