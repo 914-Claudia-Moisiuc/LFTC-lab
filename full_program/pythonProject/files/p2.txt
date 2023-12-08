@@ -1,0 +1,42 @@
+:: verify if a number is prime
+
+deffun is_prime(int a)[
+	for i in interval (2, a-1):
+		if a % i == 0:
+			send_back False
+	send_back True
+]
+
+
+
+:: compute gcd of 2 numbers
+
+deffun gcd(int a, int b)[
+    int result = call_func(get_min(a, b))
+    while result > 1:
+        if a % result == 0 and b % result == 0:
+            break
+        result--
+    
+    send_back result
+]
+
+:: compute the solutions for a 2nd order equation ax2 + bx + c =
+
+deffun second_order_eq(int a, int b, int c)[
+	float delta = rad(b*b - 4*a*c)
+	write :: (-b + delta)/(2*a) 
+	write :: (-b - delta)/(2*a) 
+
+]
+
+
+deffun main[
+	int a, b, c, x
+	read :: a :: b :: c
+
+	write :: call_func(is_prime(a))
+	write :: call_func(gcd(a, b))
+	call_func(second_order_eq(a, b, c))
+]
+
