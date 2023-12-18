@@ -1,0 +1,12 @@
+N=S B C D E F
+sigma=a h c b g f
+P=S|aBDh
+P=B|cC
+P=C|bC
+P=C|epsilon
+P=D|EF
+P=E|g
+P=E|epsilon
+P=F|f
+P=F|epsilon
+S=S
