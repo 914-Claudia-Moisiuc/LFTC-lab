@@ -1,0 +1,3 @@
+Code review for Marcu Paul + László Denisa:
+
+I really enjoyed how the code was written. By reviewing the homework of my colleagues I saw another way of resolving the problem at hand. I understood better the recursive descent algorithm and i cannot find anything wrong with the code. :)
