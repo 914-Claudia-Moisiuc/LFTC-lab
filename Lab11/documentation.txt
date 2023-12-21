@@ -1,0 +1,39 @@
+The parser is a LL(1).
+Firstly, we read from file the grammar, afterwords, the parser follows multiple steps.
+We construct the first and follow dictionaries. First dictionary shows for every non-terminal, what is the first symbol
+they go in. Follow computes the second element that follows the first elements, for each non-terminal.
+
+The parameters for the parser are: the grammar, the scanner, the first list and the follow list
+
+- computeFirst(self)
+Computes the FIRST sets for each non-terminal in the grammar.
+
+- compute_follow(self)
+Computes the FOLLOW sets for each non-terminal in the grammar.
+
+- parsing_table(self)
+Constructs the LL(1) parsing table based on the computed FIRST and FOLLOW sets.
+
+- parseSequence(self, sequence)
+Parses the input sequence using the LL(1) parsing table.
+
+- checkSequence(self, filename)
+Reads an input sequence from a file and parses it using the LL(1) parsing table.
+
+- searchSequence(self, inputStack, workingStack, resultStack)
+Recursive method for searching the LL(1) parsing table to parse the input sequence.
+
+- print_table(self)
+Prints the LL(1) parsing table.
+
+- print_first(self)
+Prints the FIRST sets for each non-terminal.
+
+- print_follow(self)
+Prints the FOLLOW sets for each non-terminal.
+
+- compareDictionaries(self, dict1, dict2)
+Compares two dictionaries for equality.
+
+- printToFile(self, filename, content)
+Writes content to a file with the given filename.

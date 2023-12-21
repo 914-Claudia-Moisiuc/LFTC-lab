@@ -1,0 +1,12 @@
+N=S C A B
+sigma=a b
+P=S| ACB
+P=S| Cbb
+P=S| Ba
+P=A| da
+P=A| BC
+P=B| g
+P=B| e
+P=C| H
+P=C| e
+S=S
