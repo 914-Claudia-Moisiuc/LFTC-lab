@@ -1,0 +1,1 @@
+(a, S, ) -> (a, BA, 1) -> (a, DCA, 14) -> (a, aCA, 148) -> (epsilon, CA, 148) -> not accepted

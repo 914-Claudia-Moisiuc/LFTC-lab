@@ -1,0 +1,67 @@
+N=program function_call list_identifiers function list_var type decl_list declaration array_decl iostmt ifstmt list_conditions condition expression term factor relation logical_operators stmt simplstmt assignstmt structstmt whilestmt forstmt logical_operators
+sigma=call_func identifier ( ) [ ] , char integer list float boolean = const nr read write :: if : else_if else + - / * % < <= == != >= > and or not = while for interval in deffun
+P=program|function
+P=program|function_call
+P=function_call|call_func ( identifier ( list_identifiers ) )
+P=function_call|call_func ( identifier () )
+P=list_identifiers|identifier
+P=list_identifiers|identifier , list_identifiers
+P=function|deffun function_name ( list_var ) [ stmt ]
+P=function|deffun function_name () [ stmt ]
+P=list_var|type identifier
+P=list_var|type identifier , list_var
+P=type|char
+P=type|integer
+P=type|list
+P=type|float
+P=type|boolean
+P=decl_list|decl_list
+P=decl_list|declaration , decl_list
+P=declaration|type identifier
+P=declaration|type identifier = identifier
+P=declaration|type identifier = const
+P=array_decl|list identifier ( nr )
+P=iostmt|read :: identifier
+P=iostmt|write :: identifier
+P=ifstmt|if list_conditions : stmt
+P=ifstmt|if list_conditions : stmt else_if list_conditions : stmt
+P=ifstmt|if list_conditions : stmt else_if list_conditions : stmt else : stmt
+P=ifstmt|if list_conditions : stmt else : stmt
+P=list_conditions|condition
+P=list_conditions|condition logical_operators list_conditions
+P=logical_operators|+
+P=logical_operators|-
+P=logical_operators|/
+P=logical_operators|%
+P=logical_operators|*
+P=condition|expression relation expression
+P=expression|expression + term
+P=expression|term
+P=term|term * factor
+P=term|factor
+P=factor|( expression )
+P=factor|identifier
+P=relation|<
+P=relation|<=
+P=relation|==
+P=relation|!=
+P=relation|>=
+P=relation|>
+P=relation|and
+P=relation|or
+P=logical_operators|and
+P=logical_operators|or
+P=logical_operators|not
+P=stmt|simplstmt
+P=stmt|structstmt
+P=simplstmt|assignstmt
+P=simplstmt|iostmt
+P=assignstmt|identifier = expression
+P=structstmt|ifstmt
+P=structstmt|whilestmt
+P=structstmt|forstmt
+P=whilestmt|while list_conditions : stmt
+P=forstmt|for identifier in interval ( identifier , identifier ) : stmt
+P=forstmt|for identifier in interval ( identifier , identifier , identifier ) : stmt
+P=forstmt|for identifier in identifier :
+S=program

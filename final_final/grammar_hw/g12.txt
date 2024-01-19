@@ -1,0 +1,12 @@
+N=S A B C
+sigma=a d b g h
+P=S|ACB
+P=S|Cbb
+P=S|Ba
+P=A|da
+P=A|BC
+P=B|g
+P=B|epsilon
+P=C|h
+P=C|epsilon
+S=S
